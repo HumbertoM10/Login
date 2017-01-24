@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
   body, html {
       height: 100%;
       background-repeat: no-repeat;
-      background-image: linear-gradient(rgb(98, 191, 215), rgb(9, 65, 79));
+      background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
   }
 
   .card-container.card {
-      max-width: 80%;
-      max-height: 80%;
+      max-width: 350px;
       padding: 40px 40px;
   }
 
   .btn {
       font-weight: 700;
-      height: 200px;
+      height: 36px;
       -moz-user-select: none;
       -webkit-user-select: none;
       user-select: none;
@@ -30,7 +30,7 @@
       /* just in case there no content*/
       padding: 20px 25px 30px;
       margin: 0 auto 25px;
-      margin-top: 100px;
+      margin-top: 50px;
       /* shadows and rounded borders */
       -moz-border-radius: 2px;
       -webkit-border-radius: 2px;
@@ -41,8 +41,8 @@
   }
 
   .profile-img-card {
-      width: 400px;
-      height: 400px;
+      width: 96px;
+      height: 96px;
       margin: 0 auto 10px;
       display: block;
       -moz-border-radius: 50%;
@@ -53,6 +53,13 @@
   /*
    * Form styles
    */
+  .profile-name-card {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0 0;
+      min-height: 1em;
+  }
 
   .reauth-email {
       display: block;
@@ -72,8 +79,8 @@
   .form-signin #inputEmail,
   .form-signin #inputPassword {
       direction: ltr;
-      height: 150px;
-      font-size: 65px;
+      height: 44px;
+      font-size: 16px;
   }
 
   .form-signin input[type=email],
@@ -99,12 +106,12 @@
 
   .btn.btn-signin {
       /*background-color: #4d90fe; */
-      background-color: rgb(156, 196, 207);
+      background-color: rgb(104, 145, 162);
       /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
       padding: 0px;
       font-weight: 700;
-      font-size: 65px;
-      height: 150px;
+      font-size: 14px;
+      height: 36px;
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       border-radius: 3px;
@@ -118,35 +125,38 @@
   .btn.btn-signin:hover,
   .btn.btn-signin:active,
   .btn.btn-signin:focus {
-      background-color: rgb(9, 65, 79);
+      background-color: rgb(12, 97, 33);
   }
 
-  .sing-up {
-      color: rgb(9, 65, 79);
-      font-size: 50px;
+  .forgot-password {
+      color: rgb(104, 145, 162);
   }
 
-  .sing-up:hover,
-  .sing-up:active,
-  .sing-up:focus{
-      color: rgb(156, 196, 207);
+  .forgot-password:hover,
+  .forgot-password:active,
+  .forgot-password:focus{
+      color: rgb(12, 97, 33);
   }
   </style>
-
-  <div class="container">
-         <div class="card card-container">
-             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-             <img id="profile-img" class="profile-img-card" src="http://seeklogo.com/images/C/centro-medico-puerta-de-hierro-logo-987792D919-seeklogo.com.png" />
-             <form class="form-signin">
-                 <span id="reauth-email" class="reauth-email"></span>
-                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-             </form><!-- /form -->
-             <p>&nbsp;</p>
-             <a href="#" class="sing-up" >
-                 Don't have account? Sing up
-             </a>
-         </div><!-- /card-container -->
-     </div><!-- /container -->
-   </html>
+      <div class="container">
+          <div class="card card-container">
+              <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+              <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+              <p id="profile-name" class="profile-name-card"></p>
+              <form class="form-signin">
+                  <span id="reauth-email" class="reauth-email"></span>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <div id="remember" class="checkbox">
+                      <label>
+                          <input type="checkbox" value="remember-me"> Remember me
+                      </label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+              </form><!-- /form -->
+              <a href="#" class="forgot-password">
+                  Forgot the password?
+              </a>
+          </div><!-- /card-container -->
+      </div><!-- /container -->
+</html>
