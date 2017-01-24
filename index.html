@@ -1,231 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
+  <style>
+  body, html {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-image: linear-gradient(rgb(98, 191, 215), rgb(9, 65, 79));
+  }
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  .card-container.card {
+      max-width: 350px;
+      padding: 40px 40px;
+  }
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+  .btn {
+      font-weight: 700;
+      height: 36px;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+      cursor: default;
+  }
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  /*
+   * Card component
+   */
+  .card {
+      background-color: #F7F7F7;
+      /* just in case there no content*/
+      padding: 20px 25px 30px;
+      margin: 0 auto 25px;
+      margin-top: 50px;
+      /* shadows and rounded borders */
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
 
-    <!-- Custom CSS -->
-    <link href="css/landing-page.css" rel="stylesheet">
+  .profile-img-card {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 10px;
+      display: block;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+  }
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  /*
+   * Form styles
+   */
+  .profile-name-card {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0 0;
+      min-height: 1em;
+  }
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  .reauth-email {
+      display: block;
+      color: #404040;
+      line-height: 2;
+      margin-bottom: 10px;
+      font-size: 14px;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+  }
 
-</head>
+  .form-signin #inputEmail,
+  .form-signin #inputPassword {
+      direction: ltr;
+      height: 44px;
+      font-size: 16px;
+  }
 
-<body>
+  .form-signin input[type=email],
+  .form-signin input[type=password],
+  .form-signin input[type=text],
+  .form-signin button {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+      z-index: 1;
+      position: relative;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+  }
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+  .form-signin .form-control:focus {
+      border-color: rgb(104, 145, 162);
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+  }
 
+  .btn.btn-signin {
+      /*background-color: #4d90fe; */
+      background-color: rgb(156, 196, 207);
+      /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+      padding: 0px;
+      font-weight: 700;
+      font-size: 14px;
+      height: 36px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      border: none;
+      -o-transition: all 0.218s;
+      -moz-transition: all 0.218s;
+      -webkit-transition: all 0.218s;
+      transition: all 0.218s;
+  }
 
-    <!-- Header -->
-    <a name="about"></a>
-    <div class="intro-header">
-        <div class="container">
+  .btn.btn-signin:hover,
+  .btn.btn-signin:active,
+  .btn.btn-signin:focus {
+      background-color: rgb(9, 65, 79);
+  }
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>Jalisco</h1>
-                        <h3>A great place for medical tourism</h3>
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><span class="network-name">Get Started</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><span class="network-name">Registered Patient</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  .sing-up {
+      color: rgb(9, 65, 79);
+  }
 
-        </div>
-        <!-- /.container -->
+  .sing-up:hover,
+  .sing-up:active,
+  .sing-up:focus{
+      color: rgb(156, 196, 207);
+  }
+  </style>
 
-    </div>
-    <!-- /.intro-header -->
-
-    <!-- Page Content -->
-
-	<a  name="services"></a>
-    <div class="content-section-a">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/ipad.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
-    <div class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
-	<a  name="contact"></a>
-    <div class="banner">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.banner -->
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+  <div class="container">
+         <div class="card card-container">
+             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+             <img id="profile-img" class="profile-img-card" src="http://seeklogo.com/images/C/centro-medico-puerta-de-hierro-logo-987792D919-seeklogo.com.png" />
+             <p id="profile-name" class="profile-name-card"></p>
+             <form class="form-signin">
+                 <span id="reauth-email" class="reauth-email"></span>
+                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+             </form><!-- /form -->
+             <a href="#" class="sing-up" >
+                 Don't have account? Sing up
+             </a>
+         </div><!-- /card-container -->
+     </div><!-- /container -->
+   </html>
