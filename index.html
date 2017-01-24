@@ -9,12 +9,13 @@
 
   .card-container.card {
       max-width: 80%;
+      max-height: 80%;
       padding: 40px 40px;
   }
 
   .btn {
       font-weight: 700;
-      height: 36px;
+      height: 200px;
       -moz-user-select: none;
       -webkit-user-select: none;
       user-select: none;
@@ -40,8 +41,8 @@
   }
 
   .profile-img-card {
-      width: 150px;
-      height: 150px;
+      width: 300px;
+      height: 300px;
       margin: 0 auto 10px;
       display: block;
       -moz-border-radius: 50%;
@@ -52,13 +53,6 @@
   /*
    * Form styles
    */
-  .profile-name-card {
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      margin: 10px 0 0;
-      min-height: 1em;
-  }
 
   .reauth-email {
       display: block;
@@ -78,8 +72,8 @@
   .form-signin #inputEmail,
   .form-signin #inputPassword {
       direction: ltr;
-      height: 44px;
-      font-size: 16px;
+      height: 200px;
+      font-size: 132px;
   }
 
   .form-signin input[type=email],
@@ -109,8 +103,8 @@
       /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
       padding: 0px;
       font-weight: 700;
-      font-size: 14px;
-      height: 36px;
+      font-size: 132px;
+      height: 200px;
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       border-radius: 3px;
@@ -129,6 +123,7 @@
 
   .sing-up {
       color: rgb(9, 65, 79);
+      font-size: 80px;
   }
 
   .sing-up:hover,
@@ -142,7 +137,6 @@
          <div class="card card-container">
              <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
              <img id="profile-img" class="profile-img-card" src="http://seeklogo.com/images/C/centro-medico-puerta-de-hierro-logo-987792D919-seeklogo.com.png" />
-             <p id="profile-name" class="profile-name-card"></p>
              <form class="form-signin">
                  <span id="reauth-email" class="reauth-email"></span>
                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
